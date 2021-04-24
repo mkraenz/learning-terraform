@@ -48,7 +48,7 @@ resource "aws_iam_user_policy" "s3_test_bucket_access" {
   "Statement": {
     "Effect": "Allow",
     "Action": "s3:*",
-    "Resource": "${aws_s3_bucket.deleteme_test_bucket.arn}"
+    "Resource": "${aws_s3_bucket.deleteme_test_bucket.arn}/*"
   }
 }
 EOF
