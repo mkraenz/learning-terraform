@@ -30,8 +30,9 @@ resource "aws_iam_access_key" "test_access_key" {
 # }
 
 resource "aws_s3_bucket" "deleteme_test_bucket" {
-  bucket = "tfdeletemetestbucket"
-  acl    = "private"
+  bucket        = "tfdeletemetestbucket"
+  acl           = "private"
+  force_destroy = true
 
   tags = {
     Name = "deleteme_test_bucket"
@@ -44,7 +45,7 @@ resource "aws_iam_user_policy" "s3_test_bucket_access" {
   user   = aws_iam_user.my_test_user.name
   policy = <<EOF
 {
-  "Version": "2012-10-17",
+  "Version": "2021-04-24",
   "Statement": {
     "Effect": "Allow",
     "Action": "s3:*",
