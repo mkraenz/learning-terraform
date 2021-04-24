@@ -59,9 +59,6 @@ output "access_key_id" {
   value = aws_iam_access_key.test_access_key.id
 }
 
-
-# Copy to clipboard via
-# tf show -json | jq .values.outputs.access_key_secret.value | tr -d '"' | xclip -selection clipboard
 output "access_key_secret" {
   value     = aws_iam_access_key.test_access_key.secret
   sensitive = true
