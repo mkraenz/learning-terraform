@@ -73,6 +73,20 @@ resource "aws_s3_bucket_object" "test_file" {
   key    = "test.txt"
   source = "./test.txt"
   etag   = filemd5("./test.txt")
+  content_type = "text/plain"
+  tags = {
+    "public" = "yes"
+  }
+}
+
+resource "aws_s3_bucket_object" "website" {
+  acl = "public-read"
+  for_each = fileset("./website/", "*")
+  bucket = aws_s3_bucket.deleteme_test_bucket.id
+  key = each.value
+  source = "./website/${each.value}"
+  etag = filemd5("./website/${each.value}")
+  content_type = "text/html"
   tags = {
     "public" = "yes"
   }
