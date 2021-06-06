@@ -22,9 +22,12 @@
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "^1.107.0",
+    "@aws-cdk/aws-dynamodb": "^1.107.0",
     "@aws-cdk/aws-lambda": "^1.107.0",
     "@aws-cdk/aws-s3": "^1.107.0",
     "@aws-cdk/core": "1.107.0",
+    "@types/aws-lambda": "^8.10.77",
+    "aws-sdk": "^2.922.0",
     "source-map-support": "^0.5.16"
   }
 }
