@@ -31,6 +31,7 @@
     "@aws-cdk/core": "1.107.0",
     "@types/aws-lambda": "^8.10.77",
     "aws-sdk": "^2.922.0",
+    "cdk-dynamo-table-viewer": "^0.1.7",
     "source-map-support": "^0.5.16"
   }
 }
